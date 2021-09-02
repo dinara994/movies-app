@@ -1,13 +1,71 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+img {
+  width: 100%;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 }
+
+.row {
+  display: flex;
+  margin: 0 -15px;
+  flex-wrap: wrap;
+}
+
+.hero {
+  background: rgba(0, 0, 0, 0.6) url("https://www.themoviedb.org/t/p/w1066_and_h600_bestv2/9DZlZvgh9dIGcri79hv3KtHiq5K.jpg") no-repeat center/cover;
+  position: absolute;
+  height: 100vh;
+  background-blend-mode: darken;
+}
+
+.style__text {
+  color: #fff;
+}
+
+.container {
+  max-width: 1140px;
+  padding: 0 15px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.info__parametr {
+  display: flex;
+  align-items: center;
+  padding: 50px 0 70px;
+}
+
+.infomovie-img {
+  width: 100%;
+  height: 400px;
+  object-fit: contain;
+}
+
+.col-3 {
+  width: 25%;
+  padding: 0 15px;
+}
+
+.col-9 {
+  width: 60%;
+  padding: 0 15px;
+}
+
+.col-2 {
+  max-width: 15%;
+  padding: 0 5px;
+  text-align: left;
+}
+
+.actor__omg {
+  width: 100px;
+}
+
+.actor__name {
+  font-size: 16px;
+}
+
+/*# sourceMappingURL=index.css.map */
