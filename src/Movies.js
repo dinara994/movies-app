@@ -16,16 +16,18 @@ const Movies = () => {
         <div className="container">
             {
                 [...Array(6).keys()].map(item =>
-                    <button key={item} type="button" onClick={() => handleClick(item + 1)}>{item + 1}</button>
+                    <button key={item} type="button" className={`btn btn-primary mx-1 ${page === item+1 && "btn-success"}`} onClick={() => handleClick(item + 1)}>{item + 1}</button>
                 )
             }
-            <div className="row">
+            <div className="row my-5">
                 {
                     movies.map(el =>
-                        <Link key={el} to={`/moviesinfo/${el.id}`}  className='col-3'>
-                            <img src={`https://www.themoviedb.org/t/p/w600_and_h900_bestv2/${el.poster_path}`} alt='title'/>
-                            <h4>{el.original_title}</h4>
-                        </Link>
+                        <div className='col-md-3 col-sm-6 md-3' key={el.id} >
+                            <Link to={`/moviesinfo/${el.id}`}  className='col-3'>
+                                <img src={`https://www.themoviedb.org/t/p/w600_and_h900_bestv2/${el.poster_path}`} className='w-100' alt={el.title}/>
+                                <h4 className='mt-4'>{el.original_title}</h4>
+                            </Link>
+                        </div>
                     )
                 }
             </div>

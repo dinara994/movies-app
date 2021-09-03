@@ -3,8 +3,8 @@ import axios from "axios";
 import {useParams} from "react-router-dom"
 import Cast from "./Cast";
 
-const InfoMovie = () => {
-    const {id} = useParams()
+const InfoMovie = (actorInfo) => {
+    const {id} = useParams() //для связки вэб страниц обьект хранит обьект {id: 2345}-фактич-е значение
     const [film, setFilm] = useState({})
 
 
@@ -19,7 +19,7 @@ const InfoMovie = () => {
             {
                 <div className='info__parametr style__text'>
                     <div className='col-3'>
-                        <img src={`https://www.themoviedb.org/t/p/w600_and_h900_bestv2/${film.poster_path}`}
+                        <img src={`https://www.themoviedb.org/t/p/w600_and_h900_bestv2/${film.poster_path}` }
                              alt={film.title} className='infomovie-img'/>
                     </div>
                     <div className='col-9'>
@@ -30,7 +30,7 @@ const InfoMovie = () => {
 
                 </div>
             }
-            <Cast actorInfo={actorIno} />
+            <Cast actorInfo={actorInfo} />
 
         </div>
     )
