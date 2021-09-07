@@ -1,58 +1,75 @@
-img{
+img {
   width: 100%;
 }
+
 a {
-    text-decoration: none;
-    color: inherit;
-    cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 }
-.row{
-display: flex;
-margin:0 -15px;
-flex-wrap: wrap;
+img{
+  max-width: 100%;
 }
-.hero{
-    background: rgba(0, 0, 0, 0.6) url('https://www.themoviedb.org/t/p/w1066_and_h600_bestv2/9DZlZvgh9dIGcri79hv3KtHiq5K.jpg') no-repeat center/cover;
-    position: absolute;
-    height: 100vh;
-  background-blend-mode: darken;
+.row {
+  display: flex;
+  margin: 0 -15px;
+  flex-wrap: wrap;
 }
+.fon-bg {
+  background-position: center ;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .style__text {
   color: #fff;
 }
+
 .container {
   max-width: 1140px;
-    padding: 0 15px;
-    width: 100%;
-    margin: 0 auto;
+  padding: 0 15px;
+  width: 100%;
+  margin: 0 auto;
 }
+
 .info__parametr {
   display: flex;
   align-items: center;
-padding: 50px 0 70px;
+  padding: 50px 0 70px;
 }
-.infomovie-img{
+
+.infomovie-img {
   width: 100%;
   height: 400px;
   object-fit: contain;
 }
-.col-3{
-    width: 25%;
-    padding: 0 15px;
+
+.col-3 {
+  width: 25%;
+  padding: 0 15px;
 }
+
 .col-9 {
-    width: 60%;
-    padding: 0 15px;
+  width: 60%;
+  padding: 0 15px;
 }
+
 .col-2 {
   max-width: 15%;
   padding: 0 5px;
   text-align: left;
 }
-.actor__omg {
-  width: 100px;
-}
 
 .actor__name {
   font-size: 16px;
+}
+.actor-character {
+  color: black;
+}
+.rec-carousel-item:focus {
+  outline: none;
+  box-shadow: inset 0 0 1px 1px lightgrey;
+}
+.rec.rec-arrow:hover {
+  border-radius: 50%;
 }

@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import axios from "axios";
 import {Link} from "react-router-dom";
+import MovieList from "../MovieList";
 
 const Movies = () => {
     const [movies, setMovies] = useState([])
@@ -16,7 +17,9 @@ const Movies = () => {
         <div className="container">
             {
                 [...Array(6).keys()].map(item =>
-                    <button key={item} type="button" className={`btn btn-primary mx-1 ${page === item+1 && "btn-success"}`} onClick={() => handleClick(item + 1)}>{item + 1}</button>
+                    <button key={item} type="button" className={`btn btn-primary mx-1 
+                    ${page === item+1 && "btn-success"}`} onClick={() =>
+                        handleClick(item + 1)}>{item + 1}</button>
                 )
             }
             <div className="row my-5">
