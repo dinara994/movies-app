@@ -12,10 +12,9 @@ const Person = () => {
     const {id} = useParams()
 // const department = acting.sort((a, b) => (b.known_for_department) - (a.known_for_department)
 
-    const filmDate = acting
+    const filmDate = acting // отфильтровали дату премьера,
         .filter(el => el.release_date)
-        .sort((a, b) => new Date(b.release_date) - new Date(a.release_date))
-
+        .sort((a, b) => new Date(b.release_date) - new Date(a.release_date)) //задали две переменные для sort-ировал по возрастанию нп-р:1, 2,
 
     useEffect(() => {
             axios(`https://api.themoviedb.org/3/person/${id}?&api_key=6f19f87e3380315b9573c4270bfc863c`)
@@ -37,24 +36,27 @@ const Person = () => {
                 <img className='actor__img'
                      src={actorInfo.profile_path ? `https://www.themoviedb.org/t/p/w276_and_h350_face${actorInfo.profile_path}` : ava}
                      alt=''/>
-                <div>{actorInfo.birthday}</div>
-                <div>{actorInfo.place_of_birt}</div>
-                <div>
+                <h3>Полная информация</h3>
+                <div><b>Год рождения:</b><br/>{actorInfo.birthday}</div>
+                <div><b>Пол:</b><br/>
                     {
                         actorInfo.gender === 1 ? "Женщина" : actorInfo.gender === 2 ? "Мужчина" : "Неизвестно"
                     }
                 </div>
+                <div><b>Также известность как:</b> <br/>
                 {
-                    actorInfo?.also_known_as?.map((name, index) =>
+                    actorInfo.also_known_as.map((name, index) =>
                         <div key={index}>{name}</div>
                     )
                 }
+
+                </div>
             </div>
 
 
             <div className='col-md-6'>
-                <div>{actorInfo.name}</div>
-                <div><span>Биография</span> <br/>{actorInfo.biography}</div>
+                <div><b>Имя:</b> <br/>{actorInfo.name}</div>
+                <div><b>Биография:</b> <br/>{actorInfo.biography}</div>
                 <div>
                     {
                         filmDate.map(item =>
@@ -69,7 +71,9 @@ const Person = () => {
                 </div>
                 <div>
                     {
-
+                        actorInfo.also_known_as.map((name, index) =>
+                            <div key={index}>{name}</div>
+                        )
                     }
                 </div>
             </div>

@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import axios from "axios";
 import {Link} from "react-router-dom";
 import MovieList from "../MovieList";
+import Rating from "../Rating";
 
 const Movies = () => {
     const [movies, setMovies] = useState([])
@@ -14,7 +15,7 @@ const Movies = () => {
             .then(({data}) => setMovies(data.results))
     },[page]) //зависимость
     return (
-        <div className="container">
+        <div>
             {
                 [...Array(6).keys()].map(item =>
                     <button key={item} type="button" className={`btn btn-primary mx-1 
@@ -25,14 +26,19 @@ const Movies = () => {
             <div className="row my-5">
                 {
                     movies.map(el =>
-                        <div className='col-md-3 col-sm-6 md-3' key={el.id} >
-                            <Link to={`/moviesinfo/${el.id}`}  className='col-3'>
-                                <img src={`https://www.themoviedb.org/t/p/w600_and_h900_bestv2/${el.poster_path}`} className='w-100' alt={el.title}/>
-                                <h4 className='mt-4'>{el.original_title}</h4>
+                        <div className='col-md-3 col-sm-6 md-3 ' key={el.id} >
+                            <Link to={`/moviesinfo/${el.id}`}  className='col-3 '>
+                               <div className='box'>
+                                   <img src={`https://www.themoviedb.org/t/p/w600_and_h900_bestv2/${el.poster_path}`} className='w-100 h-50 movies-radius' alt={el.title}/>
+                                   <h5 className='d-flex'>{el.original_title}</h5>
+                                   <p className='d-f'>{Math.floor(el.vote_average)}
+                                   <Rating rating={Math.floor(el.vote_average)}/></p>
+                               </div>
                             </Link>
                         </div>
                     )
                 }
+
             </div>
 
         </div>

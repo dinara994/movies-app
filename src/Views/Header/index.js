@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Link, useHistory} from "react-router-dom";
+import {useHistory} from "react-router-dom";
 
 const Header = () => {
     const [search, setSearch] = useState('')
@@ -16,14 +16,14 @@ const Header = () => {
     }
 
     return (
-       <div  className='d-flex justify-content-between bg-dark navbar-light text-white'>
-           <nav>
+       <div  className='header navbar-custom p-lg-4 d-flex justify-content-between bg-dark navbar-light text-white'>
+           <nav className='navbar-custom'>
                <a href="/" className='logo'>You logo
                    <img src='/' alt=""/>
                </a>
            </nav>
          <div>
-             <input type="text" value={search} onChange={handleBtn}/>
+             <input type="text" value={search} onChange={handleBtn} />
              <button  onClick={handleClick} rel="stylesheet" >Search</button>
          </div>
        </div>
