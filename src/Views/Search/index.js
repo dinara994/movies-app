@@ -117,7 +117,7 @@ if (films.total_page > 1 && page === 1) {
                                                  alt={title}/>
                                     <div className='col-md-10 search-box'>
                                         <h5>{title}</h5>
-                                        <p className=''><b>Описание:</b> {overview}</p>
+                                        <p><b>Описание:</b> {overview}</p>
                                         <p className='d-flex'> {vote_average}
                                             <Rating rating={Math.floor(vote_average)}/>
                                         </p>

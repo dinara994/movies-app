@@ -52,8 +52,7 @@ const InfoMovie = () => {
     ];
     return (
         // className='fon-bg'
-    // style={{background: `url(https://www.themoviedb.org/t/p/w1066_and_h600_bestv2/${film.backdrop_path})`}}
-        <div  className='text-light'>
+        <div  className='text-light' style={{background: `url(https://image.tmdb.org/t/p/w500${film.backdrop_path}) no-repeat center/cover`}}>
             {
                 backDrop?.results?.map(back =>
                     <img src={back.backdrop_path} alt=""/>
