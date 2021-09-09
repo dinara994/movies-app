@@ -60,7 +60,7 @@ if (films.total_page > 1 && page === 1) {
     </>
     );
 } else if(films.total_page === page) {
-    pageButtons = (
+    pageBtn = (
         <button
             className='pageButton'
         onClick={() => {
@@ -128,7 +128,7 @@ if (films.total_page > 1 && page === 1) {
 
                     ) : <p>Not Found</p>
             }
-            <div className='pageButton'>{pageBtn}next</div>
+            <button onClick={pageBtn} className='pageButton'>{pageBtn}next</button>
 
         </div>
     );

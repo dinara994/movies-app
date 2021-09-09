@@ -101,7 +101,7 @@ const InfoMovie = () => {
             </div>
             <h3 className='mt-xl-5 infomovie-underline'>Главных в ролях:</h3>
             {/*enableAutoPlay autoPlaySpeed={3000}*/}
-            <Carousel breakpoints={breakPoints} className='owl-theme mt-5 rec-arrow'  itemsToShow={3}>
+            <Carousel enableMouseSwipe breakpoints={breakPoints} className='owl-theme mt-5 rec-arrow'  itemsToShow={3}>
                 {
                     actors.slice(0, 5).map(actor =>
                         <div key={actor.id}>

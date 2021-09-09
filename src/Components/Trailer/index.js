@@ -29,7 +29,7 @@ const Trailer = ({id}) => {
     return (
 
 
-                <Carousel verticalMode margin={10} breakpoints={breakPoints} className='owl-theme mt-5 rec-carousel-item'  itemsToShow={3}>
+                <Carousel margin={10} breakpoints={breakPoints} className='owl-theme mt-5 rec-carousel-item'  itemsToShow={3}>
                 {
                     trailer.slice(0, 5).map(item =>
                         <YouTube className='youtube' videoId={item.key} opts={breakPoints}  />
