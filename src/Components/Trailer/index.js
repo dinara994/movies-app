@@ -14,7 +14,7 @@ const Trailer = ({id}) => {
                 setTrailer(data.results)
                 setYoutubeLoading(false)
             })
-    },[])
+    },[id])
 
     if (youtubeLoading) {
         return <Spinner />

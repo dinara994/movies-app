@@ -28,7 +28,7 @@ const InfoMovie = () => {
                 setFilm(data)
                 setIsLoading(false)
             })
-    }, [])
+    }, [id])
 
     useEffect(() => {
         axios(`https://api.themoviedb.org/3/movie/${id}/credits?&api_key=6f19f87e3380315b9573c4270bfc863c`)
@@ -38,7 +38,7 @@ const InfoMovie = () => {
             })
         axios(`https://www.themoviedb.org/t/p/w1066_and_h600_bestv2/${film.backdrop_path}&api_key=6f19f87e3380315b9573c4270bfc863c`)
             .then(({data}) => setBeckDrop(data.results))
-    }, [])
+    }, [id, film.backdrop_path])
 
 
     if (isLoading || actorsLoading) {
@@ -51,8 +51,7 @@ const InfoMovie = () => {
         { width: 1200, itemsToShow: 4 }
     ];
     return (
-        // className='fon-bg'
-        <div  className='text-light' style={{background: `url(https://image.tmdb.org/t/p/w500${film.backdrop_path}) no-repeat center/cover`}}>
+        <div  className='text-light' style={{background: `url(https://image.tmdb.org/t/p/w500${film.backdrop_path} no-repeat center/cover`}}>
             {
                 backDrop?.results?.map(back =>
                     <img src={back.backdrop_path} alt=""/>

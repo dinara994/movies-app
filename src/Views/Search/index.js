@@ -17,7 +17,7 @@ const Search = () => {
                 setFilms(data)
                 setLoading(false)
             })
-    }, [params.name])
+    }, [page, params.name])
 
     if (loading) {
         return <Spinner/>
