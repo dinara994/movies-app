@@ -1,5 +1,6 @@
 body {
     background: rgb(19, 14, 24);
+    color: #faefef;
 }
 
 a {
@@ -16,7 +17,14 @@ img{
     min-height: auto;
     border-bottom: none;
 }
+.size {
+    word-spacing: normal;
 
+}
+ /*----------search--------------*/
+.search-box {
+    text-align: left;
+}
  /*----------heared--------------*/
 .infomovie-underline {
     text-decoration: underline;

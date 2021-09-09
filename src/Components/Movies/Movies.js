@@ -15,7 +15,7 @@ const Movies = () => {
             .then(({data}) => setMovies(data.results))
     },[page]) //зависимость
     return (
-        <div>
+        <div className="container">
             {
                 [...Array(6).keys()].map(item =>
                     <button key={item} type="button" className={`btn btn-primary mx-1 
@@ -31,7 +31,7 @@ const Movies = () => {
                                <div className='box'>
                                    <img src={`https://www.themoviedb.org/t/p/w600_and_h900_bestv2/${el.poster_path}`} className='w-100 h-50 movies-radius' alt={el.title}/>
                                    <h5 className='d-flex'>{el.original_title}</h5>
-                                   <p className='d-f'>{Math.floor(el.vote_average)}
+                                   <p>{Math.floor(el.vote_average)}
                                    <Rating rating={Math.floor(el.vote_average)}/></p>
                                </div>
                             </Link>

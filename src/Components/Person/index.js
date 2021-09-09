@@ -57,7 +57,7 @@ const Person = () => {
             <div className='col-md-6'>
                 <div><b>Имя:</b> <br/>{actorInfo.name}</div>
                 <div><b>Биография:</b> <br/>{actorInfo.biography}</div>
-                <div>
+                <div className=''>
                     {
                         filmDate.map(item =>
                             <div className="d-flex">
@@ -69,12 +69,13 @@ const Person = () => {
                         )
                     }
                 </div>
-                <div>
+                <div className=''>
                     {
                         actorInfo.also_known_as.map((name, index) =>
-                            <div key={index}>{name}</div>
+                            <div key={index}> {name}</div>
                         )
                     }
+
                 </div>
             </div>
         </div>
