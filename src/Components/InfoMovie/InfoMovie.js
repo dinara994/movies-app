@@ -2,9 +2,6 @@ import React, {useEffect, useState} from "react"
 import axios from "axios";
 import {Link, useParams} from "react-router-dom"
 import Spinner from "../Spinner"
-import OwlCarousel from 'react-owl-carousel';
-import 'owl.carousel/dist/assets/owl.carousel.css';
-import 'owl.carousel/dist/assets/owl.theme.default.css';
 import Carousel from 'react-elastic-carousel';
 import ava from "../Icon/ava.png"
 import {language} from "../../script";
